@@ -20,8 +20,6 @@
 
 int cnt1 = 0;
 
-const byte thisSlaveAddress[5] = {'R','x','A','A','A'};
-
 RF24 radio(CE_PIN, CSN_PIN);
 
 uint8_t dataReceived; // this must match dataToSend in the TX
@@ -142,13 +140,4 @@ void cycle() {
   digitalWrite(RED_LED_PIN_3, LOW);
 
   delay(1000);
-}
-
-void showData() {
-    if (newData == true) {
-        Serial.print("Data received ");
-        Serial.println(dataReceived);
-//        Serial.println(cnt1);
-        newData = false;
-    }
 }
